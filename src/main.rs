@@ -70,7 +70,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
     
     let mut wtr = WriterBuilder::new().from_path(output_path)?;
-    wtr.write_record(&["timestamp", "led_num", "driver_number"])?;
     
     for output_record in output_records {
         wtr.serialize(output_record)?;
